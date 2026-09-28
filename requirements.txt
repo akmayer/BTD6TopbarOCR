@@ -1,0 +1,10 @@
+imutils==0.5.4
+keyboard==0.13.5
+matplotlib==3.10.8
+numpy==2.4.3
+opencv_python==4.11.0.86
+opencv_python==4.13.0.92
+Pillow==12.1.1
+pyautogui==0.9.54
+pytesseract==0.3.13
+pywin32==306
