@@ -1,4 +1,3 @@
-from . import OCR
 import pyautogui, keyboard, time, cv2
 from PIL import Image
 import numpy as np
@@ -7,7 +6,6 @@ import copy
 import importlib, re, math, json
 from win32gui import GetWindowText, GetForegroundWindow
 import os
-import pytesseract
 from PIL import ImageDraw, ImageFont
 from pathlib import Path
 from scipy.signal import convolve2d, correlate2d
@@ -16,8 +14,6 @@ from scipy.ndimage import maximum_filter
 
 
 BASE_DIR = Path(__file__).resolve().parent
-
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 
 
 def text_with_default_stroke(text, font_path, font_size=64, padding=20, stroke_width=6):
@@ -443,9 +439,6 @@ class GameInterface():
         #plt.figure(figsize=(12, 8), dpi=200)
         #plt.imshow(self.topbarProc, interpolation = 'none')
         #plt.show()
-        #self.topbarData = pytesseract.image_to_string(self.topbarProc, lang='eng',config='--psm 3')
-        #self.topbarData = OCR.extractText(thresh, display=False)
-        #result = self.rapidOCREngine(thresh)
         self.topbarData = matchImageToTemplateSet(self.topbarProc, self.templateSet, threshold = 0.65)
         
         #print(self.topbarData)

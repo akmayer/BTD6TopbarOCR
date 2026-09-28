@@ -1,4 +1,3 @@
-from . import OCR
 import pyautogui, keyboard, time, cv2
 from PIL import Image
 import numpy as np
